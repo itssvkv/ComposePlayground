@@ -100,6 +100,6 @@ fun ColumnScope.CustomItem(
 @Composable
 fun GreetingPreview() {
     ComposePlaygroundTheme {
-        GoogleButton()
+
     }
 }
