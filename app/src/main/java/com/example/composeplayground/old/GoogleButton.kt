@@ -1,4 +1,4 @@
-package com.example.composeplayground
+package com.example.composeplayground.old
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.composeplayground.R
 import com.example.composeplayground.ui.theme.Shapes
 
 

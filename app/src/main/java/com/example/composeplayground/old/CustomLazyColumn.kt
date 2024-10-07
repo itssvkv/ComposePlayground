@@ -1,4 +1,4 @@
-package com.example.composeplayground
+package com.example.composeplayground.old
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items

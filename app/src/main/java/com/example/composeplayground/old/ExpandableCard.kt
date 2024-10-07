@@ -1,4 +1,4 @@
-package com.example.composeplayground
+package com.example.composeplayground.old
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing

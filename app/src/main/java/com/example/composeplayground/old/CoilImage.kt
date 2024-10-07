@@ -1,4 +1,4 @@
-package com.example.composeplayground
+package com.example.composeplayground.old
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box

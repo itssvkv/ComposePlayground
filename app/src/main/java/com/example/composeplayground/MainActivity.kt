@@ -4,10 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -24,76 +22,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.example.composeplayground.navigation.SetupNavGraph
+import com.example.composeplayground.screens.MainScreen
 import com.example.composeplayground.ui.theme.ComposePlaygroundTheme
 
 class MainActivity : ComponentActivity() {
+    private lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             ComposePlaygroundTheme {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.background)
-                        .padding(24.dp)
-                ) {
-                    GoogleButton()
-                }
+                navController = rememberNavController()
+                MainScreen()
             }
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-
-@Composable
-fun MyFirstButton() {
-    var value by remember {
-        mutableStateOf(value = false)
-    }
-    Button(onClick = { value = !value }) {
-        Column {
-            Text(text = value.toString(), modifier = Modifier.padding(8.dp))
-        }
-    }
-}
-
-
-@Composable
-fun ColumnScope.CustomItem(
-    width: Int,
-    height: Int,
-    weight: Float = 0f,
-    color: Color = MaterialTheme.colorScheme.primary
-) {
-    if (weight != 0f) {
-        Surface(
-            modifier = Modifier
-                .weight(weight)
-                .width(width.dp),
-            color = color
-        ) {
 
         }
-    } else {
-        Surface(
-            modifier = Modifier
-                .width(width.dp)
-                .height(height.dp),
-            color = color
-        ) {
 
-        }
     }
-
 }
 
 @Preview(showBackground = true)
