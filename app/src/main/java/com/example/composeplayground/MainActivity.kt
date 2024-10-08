@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.height
@@ -26,17 +27,20 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.composeplayground.navigation.SetupNavGraph
 import com.example.composeplayground.screens.MainScreen
+import com.example.composeplayground.screens.SearchScreen
+import com.example.composeplayground.screens.SearchViewModel
 import com.example.composeplayground.ui.theme.ComposePlaygroundTheme
 
 class MainActivity : ComponentActivity() {
     private lateinit var navController: NavHostController
+    private val searchViewModel by viewModels<SearchViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContent {
             ComposePlaygroundTheme {
                 navController = rememberNavController()
-                MainScreen()
+                SetupNavGraph(navController = navController)
             }
 
         }
