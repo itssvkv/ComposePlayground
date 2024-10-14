@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
 
 }
 
@@ -87,4 +88,9 @@ dependencies {
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation("androidx.compose.material:material:1.7.3")
+
+    //swipe
+    implementation (libs.swipe)
+    //DrawBox
+    implementation  (libs.ak1.drawbox)
 }

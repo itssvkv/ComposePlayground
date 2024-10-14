@@ -2,19 +2,25 @@ package com.example.composeplayground.navigation
 
 import android.util.Log
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.composeplayground.model.Person
 import com.example.composeplayground.screens.AnimatedSplashScreen
 import com.example.composeplayground.screens.DetailScreen
 import com.example.composeplayground.screens.HomeScreen
+import com.example.composeplayground.screens.SharedViewModel
 
 @Composable
 fun SetupNavGraph(
     navController: NavHostController
 ) {
+
+    val sharedViewModel: SharedViewModel = viewModel()
 
     NavHost(
         navController = navController,
@@ -30,7 +36,7 @@ fun SetupNavGraph(
         composable(
             route = Screen.HomeScreen.route
         ) {
-            HomeScreen()
+            HomeScreen(navHostController = navController, sharedViewModel = sharedViewModel)
         }
 
         composable(
@@ -40,7 +46,13 @@ fun SetupNavGraph(
             })
         ) {
             Log.d("TAG", "SetupNavGraph: ${it.arguments?.getInt(DETAIL_ARGUMENT_KEY).toString()}")
-            DetailScreen(navController = navController)
+//            LaunchedEffect(key1 = it) {
+//                val result = navController.previousBackStackEntry?.savedStateHandle?.get<Person>(
+//                    key = "person"
+//                )
+//                Log.d("TAG", "SetupNavGraph: ${result?.firstName}")
+//            }
+            DetailScreen(navController = navController, sharedViewModel = sharedViewModel)
 
         }
 

@@ -35,7 +35,5 @@ fun ProfileScreen(
 @Composable
 @Preview(showBackground = true)
 fun ProfileScreenPreview() {
-    HomeScreen(
 
-    )
 }

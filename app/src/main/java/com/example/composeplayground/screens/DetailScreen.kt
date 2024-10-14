@@ -1,12 +1,14 @@
 package com.example.composeplayground.screens
 
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -17,8 +19,15 @@ import com.example.composeplayground.navigation.Screen
 
 @Composable
 fun DetailScreen(
-    navController: NavController
+    navController: NavController,
+    sharedViewModel: SharedViewModel
 ) {
+    val person = sharedViewModel.person
+    LaunchedEffect(key1 = person) {
+        if(person != null){
+            Log.d("TAG", "DetailScreen: ${person.firstName}")
+        }
+    }
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -42,7 +51,6 @@ fun DetailScreen(
 @Composable
 @Preview(showBackground = true)
 fun DetailScreenPreview() {
-    DetailScreen(
-        navController = rememberNavController()
-    )
+
+
 }

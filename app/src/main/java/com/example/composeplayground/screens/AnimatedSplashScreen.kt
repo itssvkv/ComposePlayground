@@ -28,6 +28,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun AnimatedSplashScreen(navHostController: NavHostController) {
+    
     var startAnimation by remember { mutableStateOf(value = false) }
     val alphaAnim = animateFloatAsState(
         targetValue = if (startAnimation) 1f else 0f,
