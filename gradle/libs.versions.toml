@@ -1,4 +1,6 @@
 [versions]
+accompanistPermissions = "0.36.0"
+accompanistWebview = "<version>"
 agp = "8.4.1"
 drawboxVersion = "1.0.3"
 kotlin = "1.9.0"
@@ -14,6 +16,8 @@ navigationCompose = "2.8.2"
 swipe = "1.3.0"
 
 [libraries]
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
+accompanist-webview = { module = "com.google.accompanist:accompanist-webview", version.ref = "accompanistWebview" }
 ak1-drawbox = { module = "io.ak1:drawbox", version.ref = "drawboxVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

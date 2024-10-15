@@ -1,10 +1,12 @@
 package com.example.composeplayground
 
+import android.Manifest
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +15,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.composeplayground.customui.SwipeLib
 import com.example.composeplayground.model.Person
 import com.example.composeplayground.navigation.SetupNavGraph
+import com.example.composeplayground.permissiontest.RequestPermission
 import com.example.composeplayground.screens.SearchViewModel
 import com.example.composeplayground.ui.theme.ComposePlaygroundTheme
 import me.saket.swipe.SwipeAction
@@ -37,8 +41,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             ComposePlaygroundTheme {
-                navHostController = rememberNavController()
-                SetupNavGraph(navController = navHostController)
+                RequestPermission(permission = Manifest.permission.READ_CONTACTS)
 
             }
 

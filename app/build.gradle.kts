@@ -93,4 +93,9 @@ dependencies {
     implementation (libs.swipe)
     //DrawBox
     implementation  (libs.ak1.drawbox)
+
+    //accompanist
+    implementation (libs.accompanist.permissions)
+    implementation (libs.accompanist.webview)
+    implementation ("com.google.accompanist:accompanist-webview:0.36.0")
 }
