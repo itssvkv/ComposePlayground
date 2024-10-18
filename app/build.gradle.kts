@@ -98,4 +98,8 @@ dependencies {
     implementation (libs.accompanist.permissions)
     implementation (libs.accompanist.webview)
     implementation ("com.google.accompanist:accompanist-webview:0.36.0")
+
+    //coil
+    implementation("io.coil-kt.coil3:coil-compose:3.0.0-rc01")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.0-rc01")
 }
